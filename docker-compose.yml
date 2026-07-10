@@ -5,8 +5,8 @@ services:
  shellshock:
    image: vulhub/bash:4.3.0-with-httpd
    container_name: shellshock
-   ports:
-    - "80"
+  #  ports:
+  #   - "80"
    volumes:
     - ./bash/shellshock/safe.cgi:/var/www/html/safe.cgi
     - ./bash/shellshock/victim.cgi:/var/www/html/victim.cgi
@@ -20,9 +20,9 @@ services:
    image: vulhub/jenkins:2.138
    container_name: jenkins
    init: true
-   ports:
-    - "50000"
-    - "8080"
+  #  ports:
+  #   - "50000"
+  #   - "8080"
    hostname: jenkins
    networks:
      vulhubnet:
@@ -60,8 +60,8 @@ services:
    build: ./telnetserver
    container_name: telnetserver
    tty: true
-   ports:
-     - "23"
+  #  ports:
+  #    - "23"
    hostname: telnetserver
    networks:
      vulhubnet:
@@ -71,8 +71,8 @@ services:
  solr-log4j:
    image: vulhub/solr:8.11.0
    container_name: solr-log4j
-   ports:
-     - "8983"
+  #  ports:
+  #    - "8983"
    hostname: solr-log4j
    networks:
      vulhubnet:
@@ -86,8 +86,8 @@ services:
     - ./tomcat/tomcat8/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
     - ./tomcat/tomcat8/context.xml:/usr/local/tomcat/webapps/manager/META-INF/context.xml
     - ./tomcat/tomcat8/context.xml:/usr/local/tomcat/webapps/host-manager/META-INF/context.xml
-   ports:
-     - "8080:8080"
+  #  ports:
+  #    - "8080:8080"
    hostname: tomcat
    networks:
      vulhubnet:
